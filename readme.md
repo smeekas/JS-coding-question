@@ -25,3 +25,36 @@
      console.log(data); // 4
    }, 1);
    ```
+
+2. [Async helper Parallel()](./Paralllel.ts)<br/>
+   You are asked to implement an async function helper, parallel() which works like Promise.all(). Different from sequence(), the async function doesn't wait for each other, rather they are all triggered together.
+
+   ```ts
+   //All async functions have following interface
+   type Callback = (error: Error, data: any) => void;
+
+   type AsyncFunc = (callback: Callback, data: any) => void;
+   ```
+
+   When error occurs, only first error is returned. Later errors or data are ignored.<br/>
+   ex.
+
+   ```ts
+   const async1 = (callback) => {
+     callback(undefined, 1);
+   };
+
+   const async2 = (callback) => {
+     callback(undefined, 2);
+   };
+
+   const async3 = (callback) => {
+     callback(undefined, 3);
+   };
+
+   const all = parallel([async1, async2, async3]);
+
+   all((error, data) => {
+     console.log(data); // [1, 2, 3]
+   }, 1);
+   ```
