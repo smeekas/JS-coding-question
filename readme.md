@@ -94,3 +94,5 @@
 
 4. [Promise.all() polyfill](./Promise.all.ts)<br/>
    Write function all which should works the same as Promise.all()
+5. [Promise.allSettled() polyfill](./Promise.allSettled.ts)<br/>
+   Write function all which should works the same as Promise.allSettled()
