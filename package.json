@@ -1,0 +1,20 @@
+{
+  "name": "js-coding-questions",
+  "version": "1.0.0",
+  "description": "1. [Async helper Sequence()](./Sequence.ts)<br/>    You are asked to implement an async function helper, sequence() which chains up async functions.<br/>    Your sequence() should accept AsyncFunc array, and chain them up by passing new data to the next AsyncFunc through data in Callback.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7"
+  }
+}
