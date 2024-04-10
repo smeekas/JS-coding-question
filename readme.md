@@ -91,3 +91,6 @@
      console.log(data); // 2, since 2 is the first to be given
    }, 1);
    ```
+
+4. [Promise.all() polyfill](./Promise.all.ts)<br/>
+   Write function all which should works the same as Promise.all()
