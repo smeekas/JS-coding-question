@@ -133,3 +133,7 @@
 10. [auto-retry Promise on rejection](./AutoRetryPromise.ts)<br/>
     You are asked to create a fetchWithAutoRetry(fetcher, count), which automatically fetch(call function) again when error happens, until the maximum count is met.<br/>
     for simplicity assume fetcher function doesn't accept any argument
+
+11. [get DOM tags](./getDomTags.ts)<br/>
+    Given a DOM tree, please return all the tag names it has.<br/>
+    Your function should return a unique array of tags names in lowercase, order doesn't matter.
