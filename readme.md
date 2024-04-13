@@ -112,3 +112,20 @@
    chunk([1, 2, 3, 4, 5], 3);
    // [[1, 2, 3], [4, 5]]
    ```
+
+   9.[height of dom tree](./HeightOfDom.ts)
+   If given DOM tree, can you create a function to get the height of it?<br/>
+   For the DOM tree below, we have a height of 4.
+
+   ```html
+   <div>
+     <div>
+       <p>
+         <button>Hello</button>
+       </p>
+     </div>
+     <p>
+       <span>World!</span>
+     </p>
+   </div>
+   ```

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "types": ["node"],
     "moduleResolution": "Node16",
-    "noImplicitThis": true
+    "noImplicitThis": true,
+    "lib": ["DOM"]
   },
   "include": ["**/*.ts"],
   "ts-node": {
