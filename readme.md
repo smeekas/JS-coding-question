@@ -95,4 +95,8 @@
 4. [Promise.all() polyfill](./Promise.all.ts)<br/>
    Write function all which should works the same as Promise.all()
 5. [Promise.allSettled() polyfill](./Promise.allSettled.ts)<br/>
-   Write function all which should works the same as Promise.allSettled()
+   Write function allSettled which should works the same as Promise.allSettled()
+6. [Promise.race() polyfill](./Promise.race.ts)<br/>
+   Write function race which should works the same as Promise.race()
+7. [lodash once()](./once.ts)<br/>
+   [\_.once(func)](https://lodash.com/docs/4.17.15#once) is used to force a function to be called only once, later calls only returns the result of first call.
