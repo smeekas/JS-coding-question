@@ -98,5 +98,17 @@
    Write function allSettled which should works the same as Promise.allSettled()
 6. [Promise.race() polyfill](./Promise.race.ts)<br/>
    Write function race which should works the same as Promise.race()
-7. [lodash once()](./once.ts)<br/>
+7. [lodash once()](./Once.ts)<br/>
    [\_.once(func)](https://lodash.com/docs/4.17.15#once) is used to force a function to be called only once, later calls only returns the result of first call.
+8. [lodash Chunk()](./Chunk.ts)<br/>
+   [\_.chunk(func)](https://lodash.com/docs/4.17.15#chunk) splits array into groups with the specific size.
+
+   ```ts
+   chunk([1, 2, 3, 4, 5], 1);
+   // [[1], [2], [3], [4], [5]]
+   chunk([1, 2, 3, 4, 5], 2);
+   // [[1, 2], [3, 4], [5]]
+
+   chunk([1, 2, 3, 4, 5], 3);
+   // [[1, 2, 3], [4, 5]]
+   ```
