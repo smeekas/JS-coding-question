@@ -113,7 +113,7 @@
    // [[1, 2, 3], [4, 5]]
    ```
 
-   9.[height of dom tree](./HeightOfDom.ts)
+9. [height of dom tree](./HeightOfDom.ts)<br/>
    If given DOM tree, can you create a function to get the height of it?<br/>
    For the DOM tree below, we have a height of 4.
 
@@ -129,3 +129,7 @@
      </p>
    </div>
    ```
+
+10. [auto-retry Promise on rejection](./AutoRetryPromise.ts)<br/>
+    You are asked to create a fetchWithAutoRetry(fetcher, count), which automatically fetch(call function) again when error happens, until the maximum count is met.<br/>
+    for simplicity assume fetcher function doesn't accept any argument
