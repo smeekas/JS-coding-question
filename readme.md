@@ -191,4 +191,4 @@
     ```
     Please create such LazyMan()
 14. [Function.prototype.call() polyfill](./Function.call.ts)<br/>
-
+15. [Function.prototype.bind() polyfill](./Function.bind.ts)<br/>
