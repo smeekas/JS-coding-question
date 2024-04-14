@@ -11,14 +11,17 @@ const getTagRecursive = (tree: HTMLElement | Element, set: Set<string>) => {
 const getTagIterative = (tree: HTMLElement | Element, set: Set<string>) => {
   let queue: (HTMLElement | Element)[] = [];
   queue.push(tree);
-
+  //for iterative version you can use any traversal techniques. I am using Level order traversal.
   while (queue.length !== 0) {
     let childQueue: (HTMLElement | Element)[] = [];
+
     while (queue.length !== 0) {
       const element = queue.pop();
+
       if (element) {
         set.add(element.tagName.toLowerCase());
         const child = element.children;
+
         for (let i = 0; i < child.length; i++) {
           childQueue.push(child[i]);
         }
