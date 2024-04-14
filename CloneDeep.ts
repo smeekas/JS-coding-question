@@ -6,7 +6,7 @@ function cloneDeep<T extends any>(obj: T, map = new Map()) {
       now if we update result and do map.get("key") we will have updated value
       so wherever we do map.get(key) and use object/array returned by map It will be updated even if we mutate it later
     */
-  if (map.has(obj)) return map.get(obj);
+  if (map.has(obj)) return map.get(obj) as T;
 
   if (Array.isArray(obj)) {
     //typeof array is object so we have to handle it before object checking
@@ -16,10 +16,10 @@ function cloneDeep<T extends any>(obj: T, map = new Map()) {
     for (let index in obj) {
       result[index] = cloneDeep(obj[index], map);
     }
-    return result;
+    return result as T;
   } else if (obj === null) {
     //typeof null is object so we have to handle it before object checking
-    return null;
+    return obj;
   } else if (typeof obj === "object") {
     const newObj = Object(obj);
 
@@ -41,7 +41,7 @@ function cloneDeep<T extends any>(obj: T, map = new Map()) {
     return result as T;
   } else {
     //typeof undefined, string, number, boolean etc....
-    return obj;
+    return obj as T;
   }
 }
 
