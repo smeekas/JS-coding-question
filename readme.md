@@ -190,3 +190,5 @@
     // Wake up after 1 second.
     ```
     Please create such LazyMan()
+14. [Function.prototype.call() polyfill](./Function.call.ts)<br/>
+
