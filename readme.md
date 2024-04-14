@@ -192,3 +192,9 @@
     Please create such LazyMan()
 14. [Function.prototype.call() polyfill](./Function.call.ts)<br/>
 15. [Function.prototype.bind() polyfill](./Function.bind.ts)<br/>
+16. [lodash cloneDeep()](./CloneDeep.ts)<br/>
+    [\_.cloneDeep](https://lodash.com/docs/4.17.15#cloneDeep) could be very useful for creating deep copies.<br/>
+    The lodash implementation actually covers a lot of data types, for simplicity, we will just need to cover<br/>
+    - primitive types and their wrapper Object
+    - Plain Objects (Object literal) with all enumerable properties
+    - Array
