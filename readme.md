@@ -137,3 +137,14 @@
 11. [get DOM tags](./getDomTags.ts)<br/>
     Given a DOM tree, please return all the tag names it has.<br/>
     Your function should return a unique array of tags names in lowercase, order doesn't matter.
+12. [Local Storage With expiration](./LocalStorageWithExpiration.ts)<br/>
+    Please create a localStorage wrapper with expiration support.<br/>
+    example:-
+
+    ```ts
+    myLocalStorage.setItem("token", "value", 1000);
+    myLocalStorage.getItem("token"); // 'value'
+
+    //after 1 second
+    myLocalStorage.getItem("token"); // null
+    ```
