@@ -198,3 +198,29 @@
     - primitive types and their wrapper Object
     - Plain Objects (Object literal) with all enumerable properties
     - Array
+17. [Convert Html to JSON](./HtmlToJson.ts)<br/>
+    Write a function that takes a DOM node as input and converts it to the JavaScript object. The object should have the type of node, its attributes, and all the children.<br/>
+    example
+    ```ts
+    // Input:
+    // <div id="foo">
+    //   <h1>Hello</h1>
+    // </div>
+    const node = document.getElementById("foo");
+    console.log(HTMLtoJSON(node));
+    /*
+    Output:
+    {
+      type: "div",
+      props: {
+        id: "foo",
+      },
+      children: [
+        {
+          type: "h1",
+          children: "Hello",
+        },
+      ],
+    }
+    */
+    ```
