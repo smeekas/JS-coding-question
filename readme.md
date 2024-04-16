@@ -245,3 +245,28 @@
     func1_3(2, 4);
     // [1,2,3,4]
     ```
+
+19. [Support Negative Indexes to Array](./NegativeIndexArray.ts)
+    write a wrapper function to make negative array index possible.
+
+    ```ts
+    const originalArr = [1, 2, 3];
+    const arr = wrap(originalArr);
+
+    arr[0]; // 1
+    arr[1]; // 2
+    arr[2]; // 3
+    arr[3]; // undefined
+    arr[-1]; // 3
+    arr[-2]; // 2
+    arr[-3]; // 1
+    arr[-4]; // undefined
+    ```
+
+    All methods on arr should be applied to the original array, which means.
+
+    ```ts
+    arr.push(4);
+    arr[3]; // 4
+    originalArr[3]; // 4
+    ```
