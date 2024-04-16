@@ -270,3 +270,18 @@
     arr[3]; // 4
     originalArr[3]; // 4
     ```
+
+20. [Throttle Promises](./ThrottlePromise.ts)<br/>
+    If you use Promise.all(), and send 100 requests then 100 requests go to your server at the same time, which is a burden to low spec servers.<br/>
+    Can we throttle API calls so that always maximum N API calls happens at the same time?<br/>
+    example
+    ```ts
+    //callApis:(()=>Promise)[]
+    throttleAsync(callApis, 5)
+      .then((data) => {
+        // the data is the same as `Promise.all`
+      })
+      .catch((err) => {
+        // any error occurs in the callApis would be relayed here
+      });
+    ```
