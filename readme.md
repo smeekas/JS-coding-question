@@ -224,3 +224,24 @@
     }
     */
     ```
+18. [lodash Partial()](./Partial.ts)<br/>
+    please create your own `partial()`.
+
+    ```ts
+    const func = (...args) => args;
+
+    const func123 = partial(func, 1, 2, 3);
+
+    func123(4);
+    // [1,2,3,4]
+    ```
+
+    It should also support placeholder.<br/>
+
+    ```ts
+    const _ = partial.placeholder;
+    const func1_3 = partial(func, 1, _, 3);
+
+    func1_3(2, 4);
+    // [1,2,3,4]
+    ```
