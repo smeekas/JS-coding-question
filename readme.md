@@ -285,3 +285,35 @@
         // any error occurs in the callApis would be relayed here
       });
     ```
+21. [Lodash isEqual()](./IsEqual.ts)<br/>
+    \_.isEqual is useful when you want to compare complex data types by value not the reference.
+    The lodash version covers a lot of data types. In this problem, we will support :
+
+    - primitives
+    - plain objects (object literals)
+    - array
+
+    Objects are compared by their own, not inherited, enumerable properties.
+
+    ```ts
+    const a = { a: "bfe" };
+    const b = { a: "bfe" };
+
+    isEqual(a, b); // true
+    a === b; // false
+
+    const c = [1, a, "4"];
+    const d = [1, b, "4"];
+
+    isEqual(c, d); // true
+    c === d; // false
+
+    // circular dependencies
+    const a = { name: "dev" };
+    a.self = a;
+    const b = { name: "dev" };
+    b.self = b;
+
+    isEqual(a, b); // true
+    a === b; // false
+    ```
