@@ -380,3 +380,8 @@
     const newArr = update(arr, { 0: { $apply: (item) => item * 2 } });
     // [2, 2, 3, 4]
     ```
+
+23. [custom typeof](./DetectType.ts)<br/>
+    Write a function to detect data types.<br/>
+    Besides basic types, you need to also handle also commonly used complex data type including `Array`, `ArrayBuffer`, `Map`, `Set`, `Date` and `Function`.<br/>
+    The type should be lowercase
