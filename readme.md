@@ -385,3 +385,38 @@
     Write a function to detect data types.<br/>
     Besides basic types, you need to also handle also commonly used complex data type including `Array`, `ArrayBuffer`, `Map`, `Set`, `Date` and `Function`.<br/>
     The type should be lowercase
+24. [Resolve Promise within time limit](./PromiseTimeLimit.ts)
+    Given an asynchronous function `fn` and a time t in milliseconds, return a new time limited version of the input function. `fn` takes arguments provided to the time limited function.<br/><br/>
+    The time limited function should follow these rules:
+
+    - If the `fn` completes within the time limit of t milliseconds, the time limited function should resolve with the result.
+
+    - If the execution of the `fn` exceeds the time limit, the time limited function should reject with the string "Time Limit Exceeded".
+      example
+
+    ```ts
+    function myFunction(data: string) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(data);
+        }, 300);
+      });
+    }
+    let newFunction = timeLimit(myFunction, 500);
+    newFunction("will resolve?")
+      .then((data) => {
+        console.log(data); // will resolve?
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    newFunction = timeLimit(myFunction, 200);
+    newFunction("will resolve?")
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err); //Time limit Exceed
+      });
+    ```
