@@ -420,3 +420,38 @@
         console.log(err); //Time limit Exceed
       });
     ```
+
+25. [Memoize](./Memo.ts)
+    Implement a general `memo()` function, which caches the result once called, so when same arguments are passed in, the result will be returned right away.
+
+    ```ts
+    const func = (arg1, arg2) => {
+      return arg1 + arg2;
+    };
+
+    const memoed = memo(func);
+
+    memoed(1, 2);
+    // 3, func is called
+
+    memoed(1, 2);
+    // 3 is returned right away without calling func
+
+    memoed(1, 3);
+    // 4, new arguments, so func is called
+    ```
+
+    The arguments are arbitrary, so memo should accept an extra resolver parameter, which is used to generate the cache key, like what [\_.memoize()](https://lodash.com/docs/4.17.15#memoize) does.
+
+    ```ts
+    const memoed = memo(func, () => "samekey");
+
+    memoed(1, 2);
+    // 3, func is called, 3 is cached with key 'samekey'
+
+    memoed(1, 2);
+    // 3, since key is the same, 3 is returned without calling func
+
+    memoed(1, 3);
+    // 3, since key is the same, 3 is returned without calling func
+    ```
