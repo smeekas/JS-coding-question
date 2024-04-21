@@ -516,3 +516,24 @@
   //Now if we visit a new url D, since we are currently at B, C is truncated.
   //[A, B, D(here)]
   ```
+
+30. [Lodash get](./Get.ts)<br/>
+    [\_.get(object, path, [defaultValue])](https://lodash.com/docs/4.17.15#get) is a handy method to help retrieving data from an arbitrary object. if the resolved value from path is `undefined`, defaultValue is returned.<br/>
+    example
+
+    ```ts
+    const obj = {
+      a: {
+        b: {
+          c: [1, 2, 3],
+        },
+      },
+    };
+
+    get(obj, "a.b.c"); // [1,2,3]
+    get(obj, "a.b.c.0"); // 1
+    get(obj, "a.b.c[1]"); // 2
+    get(obj, ["a", "b", "c", "2"]); // 3
+    get(obj, "a.b.c[3]"); // undefined
+    get(obj, "a.c", "dev"); // 'dev'
+    ```
