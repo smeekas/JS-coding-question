@@ -455,3 +455,26 @@
     memoed(1, 3);
     // 3, since key is the same, 3 is returned without calling func
     ```
+
+26. [Debounce](./Debounce.ts)<br/>
+    `debounce(func, delay)` will returned a `debounced` function, which delays the invoke.<br/>
+    Implement such function
+27. [Throttle](./Throttle.ts)<br/>
+    `throttle(func, delay)` will return a `throttled` function, which will invoke the func at a max frequency no matter how throttled one is called.<br/>
+    Basically Throttle will rate limit the original function.<br/>
+    When function is in its throttling phase, we might get more function call which we will ignore, but you have to call last function call after throttling finishes.<br/>
+    example
+
+    ```ts
+    function myFn(arg: number) {
+      console.log(arg);
+    }
+
+    const throttled = throttle(myFn, 5);
+    throttled(1); //1
+    throttled(2); //ignored
+    throttled(3); //ignored
+    throttled(4); //ignored
+    // assume now throttling phase is finished.
+    // we have to call function with argument 4 because it was the last function call during throttling phase.
+    ```
