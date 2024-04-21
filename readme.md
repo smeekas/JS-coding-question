@@ -479,10 +479,40 @@
     // we have to call function with argument 4 because it was the last function call during throttling phase.
     ```
 
-28. [Memoize one](./MemoizeOne.ts)
+28. [Memoize one](./MemoizeOne.ts)<br/>
     Create `MemoizeOne` function. Unlike `memo` it only remembers the latest arguments and result(and this(context)).<br/>
-    Please implement your own memoizeOne(), it takes 2 arguments
-    - target function
-    - (optional) a equality check function to compare current and last arguments
+    Please implement your own `memoizeOne()`, it takes 2 arguments
 
-Default equality check function should be a shallow comparison on array items with strict equal ===.
+        - target function
+        - (optional) a equality check function to compare current and last arguments
+
+        Default equality check function should be a shallow comparison on array items with strict equal ===.
+
+29. [create a browser history](./BrowserHistory.ts)<br/>
+    Please create BrowserHistory class to mimic browser history behavior.<br/>
+    The common actions relating to history are:
+
+- new` BrowserHistory()` - when you open a new tab, it is set with an empty history
+- `goBack()` - go to last entry, notice the entries are kept so that `forward()` could get us back
+- `forward()` - go to next visited entry
+- `visit()` - when you enter a new address or click a link, this adds a new entry but truncate the entries which we could forward() to.
+
+  ```ts
+  // we start with a new tab
+  //[]
+
+  // We visit A, B, C
+  //[A, B, C(here)]
+
+  // goBack()
+  //[A, B(here), C]
+
+  // goBack()
+  //[A(here), B, C]
+
+  // forward()
+  //[A, B(here), C]
+
+  //Now if we visit a new url D, since we are currently at B, C is truncated.
+  //[A, B, D(here)]
+  ```
