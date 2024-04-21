@@ -478,3 +478,11 @@
     // assume now throttling phase is finished.
     // we have to call function with argument 4 because it was the last function call during throttling phase.
     ```
+
+28. [Memoize one](./MemoizeOne.ts)
+    Create `MemoizeOne` function. Unlike `memo` it only remembers the latest arguments and result(and this(context)).<br/>
+    Please implement your own memoizeOne(), it takes 2 arguments
+    - target function
+    - (optional) a equality check function to compare current and last arguments
+
+Default equality check function should be a shallow comparison on array items with strict equal ===.
