@@ -537,3 +537,32 @@
     get(obj, "a.b.c[3]"); // undefined
     get(obj, "a.c", "dev"); // 'dev'
     ```
+
+31. [Cache API calls](./CacheApiCall.ts)<br/>
+    Implement a function in JavaScript that caches the API response for the given amount of time. If a new call is made between that time, the response from the cache will be returned, else a fresh API call will be made.<br/>
+    We will use config object if provided. api calls are same if both config object are same.<br/>
+    If no config object is provided then api calls are same if api paths are same.<br/>
+    example
+
+    ```ts
+    /*
+      call(path:string,config?:object)
+    */
+    const call = cachedApiCall(3000);
+
+    call("https://jsonplaceholder.typicode.com/todos/1", {
+      keyword: "dev",
+    }).then((a) => console.log(a)); //api call
+
+    setTimeout(() => {
+      call("https://jsonplaceholder.typicode.com/todos/1", {
+        keyword: "dev",
+      }).then((a) => console.log(a)); // returned from cache
+    }, 2500);
+
+    setTimeout(() => {
+      call("https://jsonplaceholder.typicode.com/todos/1", {
+        keyword: "dev",
+      }).then((a) => console.log(a)); // new api call
+    }, 4000);
+    ```
