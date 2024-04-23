@@ -385,7 +385,7 @@
     Write a function to detect data types.<br/>
     Besides basic types, you need to also handle also commonly used complex data type including `Array`, `ArrayBuffer`, `Map`, `Set`, `Date` and `Function`.<br/>
     The type should be lowercase
-24. [Resolve Promise within time limit](./PromiseTimeLimit.ts)
+24. [Resolve Promise within time limit](./PromiseTimeLimit.ts)<br/>
     Given an asynchronous function `fn` and a time t in milliseconds, return a new time limited version of the input function. `fn` takes arguments provided to the time limited function.<br/><br/>
     The time limited function should follow these rules:
 
@@ -421,7 +421,7 @@
       });
     ```
 
-25. [Memoize](./Memo.ts)
+25. [Memoize](./Memo.ts)<br/>
     Implement a general `memo()` function, which caches the result once called, so when same arguments are passed in, the result will be returned right away.
 
     ```ts
@@ -565,4 +565,61 @@
         keyword: "dev",
       }).then((a) => console.log(a)); // new api call
     }, 4000);
+    ```
+
+32. [getByClassName](./GetByClassName.ts)<br/>
+    Write a custom function to find all the elements with the given class in the DOM. Simply put, write the polyfill for the getElementByClassName().<br/>
+    example
+    ```tsx
+    /* INPUT
+    <div class="a">
+      <div class="b">
+        <div class="a">
+          <div class="d">d1</div>
+        </div>
+        <div class="c">
+          <div class="a">
+            <div class="d">d2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    */
+    findByClass("d");
+    /* OUTPUT
+    [
+      <div class="d">d1</div>,
+      <div class="d">d2</div>
+    ]
+    */
+    ```
+33. [getByClassNameHierarchy()](./GetByClassNameHierarchy.ts)<br/>
+    Write a function getByClassNameHierarchy() in javaScript that takes a path of class names and returns the last element of that path.<br/>
+    example
+    ```tsx
+    /* INPUT
+    <div class="a">
+      <div class="b">
+        <div class="a">
+          <div class="d">d1</div>
+        </div>
+        <div class="c">
+          <div class="a">
+            <div class="d">d2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    */
+    getByClassNameHierarchy("a>b>a");
+    /* OUTPUT
+    [
+      <div class="a">
+          <div class="d">d1</div>
+      </div>,
+      <div class="a">
+          <div class="d">d2</div>
+      </div>
+    ]
+    */
     ```
