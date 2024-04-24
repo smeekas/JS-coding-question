@@ -623,3 +623,5 @@
     ]
     */
     ```
+34. [FindAllElementsByColor](./FindAllElementsByColor.ts)<br/>
+    Write a function to find all the elements with the given color. Here the color will be provided in any format like, plain text (white), HEXA value (#fff or #ffffff), or RGB value (RGB(255, 255, 255)).
