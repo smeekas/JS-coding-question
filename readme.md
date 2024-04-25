@@ -634,7 +634,7 @@
       .css("backgroundColor", "#000")
       .css("fontWeight", "bold");
     ```
-36. [Generate Selectors](./GenerateSelector.ts)
+36. [Generate Selectors](./GenerateSelector.ts)<br/>
     Given a DOM tree and a target element, generate a valid selector to target it.<br/>
     Function should take target element into input and return string of valid selector.<br/>
     You can use id, class, tag-name etc...<br/>
@@ -653,4 +653,22 @@
     </div>
     //Input:- Button Element
     //Output:- body > div > div:nth-child(1) > p > span > button
+    ```
+37. [Circuit Breaker](./CircuitBreaker.ts)<br/>
+    We have to implement a function that will halt the operation for X amount of time if it fails for Y count.
+
+    ```ts
+    const breaker = circuitBreaker(myFn, 2, 3000);
+    //if myFn fail then retry 2 times. if it still fails then halt operation for 3000ms.
+    //after 3000ms only we can again call myFn.
+
+    breaker().then(console.log).catch(console.log); //assume error so we will try 2 times.
+
+    setTimeout(() => {
+      breaker().then(console.log).catch(console.log); // It will give time limit error since circuit broke.
+    }, 2000);
+
+    setTimeout(() => {
+      breaker().then(console.log).catch(console.log); //3000ms passed so we can again call it
+    }, 4900);
     ```
