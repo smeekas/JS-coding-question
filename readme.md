@@ -634,3 +634,23 @@
       .css("backgroundColor", "#000")
       .css("fontWeight", "bold");
     ```
+36. [Generate Selectors](./GenerateSelector.ts)
+    Given a DOM tree and a target element, generate a valid selector to target it.<br/>
+    Function should take target element into input and return string of valid selector.<br/>
+    You can use id, class, tag-name etc...<br/>
+    example
+    ```ts
+    <div>
+      <p>dev</p>
+      <div>
+        is
+        <p>
+          <span>
+            great. <button>click me!</button>
+          </span>
+        </p>
+      </div>
+    </div>
+    //Input:- Button Element
+    //Output:- body > div > div:nth-child(1) > p > span > button
+    ```
