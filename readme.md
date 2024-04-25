@@ -623,3 +623,34 @@
     ]
     */
     ```
+34. [FindAllElementsByColor](./FindAllElementsByColor.ts)<br/>
+    Write a function to find all the elements with the given color. Here the color will be provided in any format like, plain text (white), HEXA value (#fff or #ffffff), or RGB value (RGB(255, 255, 255)).
+35. [Method chaining](./MethodChaining.ts)<br/>
+    Write function `$` to support method chaining like jQuery.<br/>
+    example
+    ```ts
+    $("#button")
+      .css("color", "#fff")
+      .css("backgroundColor", "#000")
+      .css("fontWeight", "bold");
+    ```
+36. [Generate Selectors](./GenerateSelector.ts)
+    Given a DOM tree and a target element, generate a valid selector to target it.<br/>
+    Function should take target element into input and return string of valid selector.<br/>
+    You can use id, class, tag-name etc...<br/>
+    example
+    ```ts
+    <div>
+      <p>dev</p>
+      <div>
+        is
+        <p>
+          <span>
+            great. <button>click me!</button>
+          </span>
+        </p>
+      </div>
+    </div>
+    //Input:- Button Element
+    //Output:- body > div > div:nth-child(1) > p > span > button
+    ```
