@@ -700,3 +700,5 @@
       "C.Q.1": 2
     }
     ```
+39. [clear All Timeouts](./clearAllTimeout.ts)<br/>
+  write function `clearAllTimeouts` which will clear All the set timeouts.
