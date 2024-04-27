@@ -700,5 +700,16 @@
       "C.Q.1": 2
     }
     ```
-39. [clear All Timeouts](./clearAllTimeout.ts)<br/>
-  write function `clearAllTimeouts` which will clear All the set timeouts.
+39. [clear All Timeouts](./ClearAllTimeout.ts)<br/>
+    write function `clearAllTimeouts` which will clear All the set timeouts.
+
+40. [Remove Cycle From Object](./RemoveCycle.ts)<br/>
+    Write a function which will remove cycle from object and returns a modified object.
+
+    ```ts
+    const a = { b: 10, c: { d: 20 } };
+    a.e = a; //circular dependency.
+    //a = { b: 10, c: { d: 20 },e:a }
+    //OUTPUT
+    // a = { b: 10, c: { d: 20 },e:undefined }
+    ```
