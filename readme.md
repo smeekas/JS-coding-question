@@ -716,7 +716,11 @@
 
 41. [My Promise](./MyPromise.ts)<br/>
     Create `MyPromise` class that supports normal promise operations and below things.
+
     - new promise: `new MyPromise((resolve, reject) => {})`
     - chaining : `MyPromise.prototype.then()` then handlers should be called asynchronously
     - rejection handler: `MyPromise.prototype.catch()`
     - static methods: `MyPromise.resolve()`, `MyPromise.reject()`.
+
+42. [Flatten Array](./Flat.ts)<br/>
+    function to replicate .flat() method of Array
