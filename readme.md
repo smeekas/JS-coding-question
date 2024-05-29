@@ -724,3 +724,6 @@
 
 42. [Flatten Array](./Flat.ts)<br/>
     function to replicate .flat() method of Array
+
+43. [JSON.stringify](./JSON.stringify.ts)
+    Polyfill of JSON.stringify method
