@@ -381,7 +381,7 @@
     // [2, 2, 3, 4]
     ```
 
-23. [custom typeof](./DetectType.ts)<br/>
+23. [custom typeOf](./DetectType.ts)<br/>
     Write a function to detect data types.<br/>
     Besides basic types, you need to also handle also commonly used complex data type including `Array`, `ArrayBuffer`, `Map`, `Set`, `Date` and `Function`.<br/>
     The type should be lowercase
@@ -459,7 +459,26 @@
 26. [Debounce](./Debounce.ts)<br/>
     `debounce(func, delay)` will returned a `debounced` function, which delays the invoke.<br/>
     Implement such function
-27. [Throttle](./Throttle.ts)<br/>
+27. [Debounce 2](./Debounce2.ts)<br/>
+    Along with regular debounce function provide another 2 methods.
+
+    1. `cancel()` method to cancel pending invocations.
+    2. `flush()` method to immediately invoke any delayed invocations.<br/>
+
+    example.
+
+    ```ts
+    const debounced = debounce(() => console.log("debounced"), 500);
+    debounced();
+    debounced.cancel(); //cancel the invocation.
+    // no log displayed in console.
+
+    debounced();
+    debounced.flush(); //delayed function invoked immediately.
+    // log will be displayed in console immediately.
+    ```
+
+28. [Throttle](./Throttle.ts)<br/>
     `throttle(func, delay)` will return a `throttled` function, which will invoke the func at a max frequency no matter how throttled one is called.<br/>
     Basically Throttle will rate limit the original function.<br/>
     When function is in its throttling phase, we might get more function call which we will ignore, but you have to call last function call after throttling finishes.<br/>
@@ -479,7 +498,7 @@
     // we have to call function with argument 4 because it was the last function call during throttling phase.
     ```
 
-28. [Memoize one](./MemoizeOne.ts)<br/>
+29. [Memoize one](./MemoizeOne.ts)<br/>
     Create `MemoizeOne` function. Unlike `memo` it only remembers the latest arguments and result(and this(context)).<br/>
     Please implement your own `memoizeOne()`, it takes 2 arguments
 
@@ -488,7 +507,7 @@
 
         Default equality check function should be a shallow comparison on array items with strict equal ===.
 
-29. [create a browser history](./BrowserHistory.ts)<br/>
+30. [create a browser history](./BrowserHistory.ts)<br/>
     Please create BrowserHistory class to mimic browser history behavior.<br/>
     The common actions relating to history are:
 
