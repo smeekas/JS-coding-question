@@ -744,10 +744,10 @@
 42. [Flatten Array](./Flat.ts)<br/>
     function to replicate .flat() method of Array
 
-43. [JSON.stringify](./JSON.stringify.ts)
+43. [JSON.stringify](./JSON.stringify.ts)<br/>
     Polyfill of JSON.stringify method
 
-44. [Custom New](./CustomNew.ts)
+44. [Custom New](./CustomNew.ts)<br/>
     In javascript we use `new` keyword to create instance of class.
     Create instance of class without using `new` keyword for ES5.
 
@@ -758,4 +758,35 @@
     const batman = newCreator(SuperHero, "bruce");
     console.log(batman instanceof Superhero); //true
     console.log(batman.name); //bruce
+    ```
+
+45. [Curry](./Curry.ts)<br/>
+    Currying is the technique of converting a function that takes N arguments(fixed) into a sequence of functions that each takes a x (x<=N) arguments. <br/>
+    Implement such function.<br/>
+    Example
+    ```ts
+    function multiply(a, b, c) {
+      return a * b * c;
+    }
+    const curriedMultiply = curry(multiply);
+    console.log(curriedMultiply(2, 3, 4)); //24
+    console.log(curriedMultiply(2)(3)(4)); //24
+    console.log(curriedMultiply(2, 3)(4)); //24
+    console.log(curriedMultiply(2)(3, 4)); //24
+    ```
+46. [Curry 2](./Curry2.ts)<br/>
+    Same as Curry but now we do not want to restrict on number of arguments.<br/>
+    Function which we want to curry can have any number of arguments.<br/>
+    Example
+
+    ```ts
+    function multiply(...args: number[]) {
+      return args.reduce((acc, curr) => acc * curr, 1);
+    }
+
+    const curried = curry(multiply);
+    console.log(curried(2, 3)); //6
+    console.log(curried(2, 3)(2)(2)); //24
+    console.log(curried(2, 3)(1, 2)(3)); //36
+    console.log(curried(2, 3)(2)(1)(10)(2)); //240
     ```
