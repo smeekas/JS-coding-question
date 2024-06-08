@@ -746,3 +746,16 @@
 
 43. [JSON.stringify](./JSON.stringify.ts)
     Polyfill of JSON.stringify method
+
+44. [Custom New](./CustomNew.ts)
+    In javascript we use `new` keyword to create instance of class.
+    Create instance of class without using `new` keyword for ES5.
+
+    ```ts
+    function SuperHero(name: string) {
+      this.name = name;
+    }
+    const batman = newCreator(SuperHero, "bruce");
+    console.log(batman instanceof Superhero); //true
+    console.log(batman.name); //bruce
+    ```
