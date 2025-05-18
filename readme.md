@@ -142,30 +142,30 @@
     example:-
 
     ```ts
-    myLocalStorage.setItem("token", "value", 1000);
-    myLocalStorage.getItem("token"); // 'value'
+    myLocalStorage.setItem('token', 'value', 1000);
+    myLocalStorage.getItem('token'); // 'value'
 
     //after 1 second
-    myLocalStorage.getItem("token"); // null
+    myLocalStorage.getItem('token'); // null
     ```
 
 13. [Lazy Man](./Lazyman.ts)<br/>
     LazyMan is very lazy, he only eats and sleeps.<br/>
     `LazyMan(name: string, logFn: (log: string) => void)` would output a message, the passed logFn is used.
     ```ts
-    LazyMan("Jack", console.log);
+    LazyMan('Jack', console.log);
     // Hi, I'm Jack.
     ```
     He can eat(food: string)
     ```ts
-    LazyMan("Jack", console.log).eat("banana").eat("apple");
+    LazyMan('Jack', console.log).eat('banana').eat('apple');
     // Hi, I'm Jack.
     // Eat banana.
     // Eat Apple.
     ```
     He also sleep(time: number), time is based on seconds.
     ```ts
-    LazyMan("Jack", console.log).eat("banana").sleep(10).eat("apple").sleep(1);
+    LazyMan('Jack', console.log).eat('banana').sleep(10).eat('apple').sleep(1);
     // Hi, I'm Jack.
     // Eat banana.
     // (after 10 seconds)
@@ -176,10 +176,10 @@
     ```
     He can sleepFirst(time: number), which has the highest priority among all tasks, no matter what the order is.
     ```ts
-    LazyMan("Jack", console.log)
-      .eat("banana")
+    LazyMan('Jack', console.log)
+      .eat('banana')
       .sleepFirst(10)
-      .eat("apple")
+      .eat('apple')
       .sleep(1);
     // (after 10 seconds)
     // Wake up after 10 seconds.
@@ -206,7 +206,7 @@
     // <div id="foo">
     //   <h1>Hello</h1>
     // </div>
-    const node = document.getElementById("foo");
+    const node = document.getElementById('foo');
     console.log(HTMLtoJSON(node));
     /*
     Output:
@@ -296,22 +296,22 @@
     Objects are compared by their own, not inherited, enumerable properties.
 
     ```ts
-    const a = { a: "bfe" };
-    const b = { a: "bfe" };
+    const a = { a: 'bfe' };
+    const b = { a: 'bfe' };
 
     isEqual(a, b); // true
     a === b; // false
 
-    const c = [1, a, "4"];
-    const d = [1, b, "4"];
+    const c = [1, a, '4'];
+    const d = [1, b, '4'];
 
     isEqual(c, d); // true
     c === d; // false
 
     // circular dependencies
-    const a = { name: "dev" };
+    const a = { name: 'dev' };
     a.self = a;
-    const b = { name: "dev" };
+    const b = { name: 'dev' };
     b.self = b;
 
     isEqual(a, b); // true
@@ -403,7 +403,7 @@
       });
     }
     let newFunction = timeLimit(myFunction, 500);
-    newFunction("will resolve?")
+    newFunction('will resolve?')
       .then((data) => {
         console.log(data); // will resolve?
       })
@@ -412,7 +412,7 @@
       });
 
     newFunction = timeLimit(myFunction, 200);
-    newFunction("will resolve?")
+    newFunction('will resolve?')
       .then((data) => {
         console.log(data);
       })
@@ -444,7 +444,7 @@
     The arguments are arbitrary, so memo should accept an extra resolver parameter, which is used to generate the cache key, like what [\_.memoize()](https://lodash.com/docs/4.17.15#memoize) does.
 
     ```ts
-    const memoed = memo(func, () => "samekey");
+    const memoed = memo(func, () => 'samekey');
 
     memoed(1, 2);
     // 3, func is called, 3 is cached with key 'samekey'
@@ -468,7 +468,7 @@
     example.
 
     ```ts
-    const debounced = debounce(() => console.log("debounced"), 500);
+    const debounced = debounce(() => console.log('debounced'), 500);
     debounced();
     debounced.cancel(); //cancel the invocation.
     // no log displayed in console.
@@ -549,12 +549,12 @@
       },
     };
 
-    get(obj, "a.b.c"); // [1,2,3]
-    get(obj, "a.b.c.0"); // 1
-    get(obj, "a.b.c[1]"); // 2
-    get(obj, ["a", "b", "c", "2"]); // 3
-    get(obj, "a.b.c[3]"); // undefined
-    get(obj, "a.c", "dev"); // 'dev'
+    get(obj, 'a.b.c'); // [1,2,3]
+    get(obj, 'a.b.c.0'); // 1
+    get(obj, 'a.b.c[1]'); // 2
+    get(obj, ['a', 'b', 'c', '2']); // 3
+    get(obj, 'a.b.c[3]'); // undefined
+    get(obj, 'a.c', 'dev'); // 'dev'
     ```
 
 31. [Cache API calls](./CacheApiCall.ts)<br/>
@@ -569,19 +569,19 @@
     */
     const call = cachedApiCall(3000);
 
-    call("https://jsonplaceholder.typicode.com/todos/1", {
-      keyword: "dev",
+    call('https://jsonplaceholder.typicode.com/todos/1', {
+      keyword: 'dev',
     }).then((a) => console.log(a)); //api call
 
     setTimeout(() => {
-      call("https://jsonplaceholder.typicode.com/todos/1", {
-        keyword: "dev",
+      call('https://jsonplaceholder.typicode.com/todos/1', {
+        keyword: 'dev',
       }).then((a) => console.log(a)); // returned from cache
     }, 2500);
 
     setTimeout(() => {
-      call("https://jsonplaceholder.typicode.com/todos/1", {
-        keyword: "dev",
+      call('https://jsonplaceholder.typicode.com/todos/1', {
+        keyword: 'dev',
       }).then((a) => console.log(a)); // new api call
     }, 4000);
     ```
@@ -604,7 +604,7 @@
       </div>
     </div>
     */
-    findByClass("d");
+    findByClass('d');
     /* OUTPUT
     [
       <div class="d">d1</div>,
@@ -630,7 +630,7 @@
       </div>
     </div>
     */
-    getByClassNameHierarchy("a>b>a");
+    getByClassNameHierarchy('a>b>a');
     /* OUTPUT
     [
       <div class="a">
@@ -648,10 +648,10 @@
     Write function `$` to support method chaining like jQuery.<br/>
     example
     ```ts
-    $("#button")
-      .css("color", "#fff")
-      .css("backgroundColor", "#000")
-      .css("fontWeight", "bold");
+    $('#button')
+      .css('color', '#fff')
+      .css('backgroundColor', '#000')
+      .css('fontWeight', 'bold');
     ```
 36. [Generate Selectors](./GenerateSelector.ts)<br/>
     Given a DOM tree and a target element, generate a valid selector to target it.<br/>
@@ -755,7 +755,7 @@
     function SuperHero(name: string) {
       this.name = name;
     }
-    const batman = newCreator(SuperHero, "bruce");
+    const batman = newCreator(SuperHero, 'bruce');
     console.log(batman instanceof Superhero); //true
     console.log(batman.name); //bruce
     ```
@@ -779,14 +779,283 @@
     Function which we want to curry can have any number of arguments.<br/>
     Example
 
-    ```ts
-    function multiply(...args: number[]) {
-      return args.reduce((acc, curr) => acc * curr, 1);
-    }
+        ```ts
+        function multiply(...args: number[]) {
+          return args.reduce((acc, curr) => acc * curr, 1);
+        }
 
-    const curried = curry(multiply);
-    console.log(curried(2, 3)); //6
-    console.log(curried(2, 3)(2)(2)); //24
-    console.log(curried(2, 3)(1, 2)(3)); //36
-    console.log(curried(2, 3)(2)(1)(10)(2)); //240
-    ```
+        const curried = curry(multiply);
+        console.log(curried(2, 3)); //6
+        console.log(curried(2, 3)(2)(2)); //24
+        console.log(curried(2, 3)(1, 2)(3)); //36
+        console.log(curried(2, 3)(2)(1)(10)(2)); //240
+        ```
+
+    TODO
+
+47. promise based Debounce
+
+```javascript
+/**
+ * Create a function that debounces a promise-returning function
+ * Only the most recent call should be executed after the wait time
+ *
+ * @param {Function} fn - Function returning a promise
+ * @param {number} wait - Debounce wait time in milliseconds
+ * @return {Function} - Debounced function returning a promise
+ */
+function debouncePromise(fn, wait) {
+  // Your implementation here
+}
+```
+
+2. Build a Promise Cache with TTL and Custom Key Generation
+
+```javascript
+/**
+ * Create a caching mechanism for promise-returning functions with:
+ * - Time-to-live (TTL) for each cached result
+ * - Custom key generation for complex arguments
+ * - Optional force refresh parameter
+ *
+ * @param {Function} fn - Function to be cached
+ * @param {Object} options - Configuration options
+ * @param {number} options.ttl - Cache TTL in milliseconds
+ * @param {Function} options.keyGenerator - Function to generate cache keys
+ */
+function createPromiseCache(fn, options) {
+  // Your implementation here
+}
+```
+
+3. Promise Queue with Priority
+
+```javascript
+/**
+ * Implement a promise queue that processes tasks based on priority
+ * - Higher priority tasks execute before lower priority ones
+ * - Tasks with same priority execute in FIFO order
+ * - Allows dynamically adding tasks while processing
+ *
+ * @param {number} concurrency - Maximum number of concurrent promises
+ * @return {Object} Queue controller with methods: add, pause, resume, clear
+ */
+function createPriorityPromiseQueue(concurrency) {
+  // Your implementation here
+}
+
+// Example usage
+const queue = createPriorityPromiseQueue(2);
+queue.add(() => fetch('/data'), { priority: 1 });
+queue.add(() => fetch('/critical'), { priority: 10 });
+```
+
+4. Cancelable Promise Implementation
+
+```javascript
+/**
+ * Implement a cancelable promise utility that allows:
+ * - Canceling pending promises
+ * - Cleaning up resources when canceled (e.g., abort fetch requests)
+ * - Returns { promise, cancel } where cancel is a function
+ *
+ * @param {Function} executor - Standard promise executor function
+ * @return {Object} Object containing the promise and cancel method
+ */
+function cancelablePromise(executor) {
+  // Your implementation here
+}
+```
+
+5. Promise State Machine
+
+```javascript
+/**
+ * Implement a promise-based state machine that:
+ * - Defines possible states and transitions between them
+ * - Ensures transitions follow allowed paths
+ * - Executes async actions during transitions
+ * - Maintains history of state changes
+ *
+ * @param {Object} config - State machine configuration
+ * @return {Object} State machine controller
+ */
+function createAsyncStateMachine(config) {
+  // Your implementation here
+}
+```
+
+6. Promise Memoization with Dependency Tracking
+
+```javascript
+/**
+ * Create a function that memoizes async results while:
+ * - Tracking dependencies between cached promises
+ * - Invalidating dependent cache entries when dependencies change
+ * - Supporting selective cache invalidation
+ *
+ * @param {Function} fn - Async function to memoize
+ * @return {Function} Memoized function with invalidate() method
+ */
+function memoizeWithDependencies(fn) {
+  // Your implementation here
+}
+```
+
+7. Transactional Promise Chain
+
+```javascript
+/**
+ * Implement a transactional promise chain that:
+ * - Executes a series of async operations as a "transaction"
+ * - Rolls back all operations if any step fails
+ * - Each operation must provide its own rollback logic
+ * - Returns final result if successful or rolls back and throws error
+ *
+ * @param {Array<Object>} operations - Array of {execute, rollback} functions
+ * @return {Promise} - Final result or error after rollback
+ */
+function transactionalPromiseChain(operations) {
+  // Your implementation here
+}
+```
+
+8. Observable Promise Streams
+
+```javascript
+/**
+ * Create an observable promise stream that:
+ * - Transforms a source of events/promises into an observable stream
+ * - Allows mapping, filtering, and merging of async streams
+ * - Supports backpressure for handling high-frequency events
+ * - Provides subscription with next/error/complete handlers
+ *
+ * @param {Function|Iterator} source - Promise source or iterator
+ * @return {Object} Observable with operators like map, filter, merge
+ */
+function createObservablePromiseStream(source) {
+  // Your implementation here
+}
+```
+
+9. Promise Middleware System
+
+```javascript
+/**
+ * Implement a promise middleware system similar to Express/Redux middleware:
+ * - Each middleware can modify the request/response
+ * - Middleware can short-circuit the chain
+ * - Support for both sync and async middleware
+ * - Error handling across the chain
+ *
+ * @param {Array<Function>} middlewares - Array of middleware functions
+ * @return {Function} - Function that executes the middleware chain
+ */
+function createPromiseMiddleware(middlewares) {
+  // Your implementation here
+}
+
+// Example usage:
+const execute = createPromiseMiddleware([
+  async (ctx, next) => {
+    console.log('Start');
+    await next();
+    console.log('End');
+  },
+  async (ctx, next) => {
+    ctx.result = await fetch(ctx.url);
+    await next();
+  },
+]);
+```
+
+10. Async Resource Pool
+
+```javascript
+/**
+ * Implement a resource pool for managing limited async resources:
+ * - Maintain a pool of N reusable resources (e.g., DB connections)
+ * - When a resource is needed, either provide an available one or wait
+ * - Return resources to the pool when operations complete
+ * - Handle errors without losing resources
+ * - Support resource health checks and recreation
+ *
+ * @param {number} poolSize - Maximum number of resources
+ * @param {Function} createResource - Async function to create a resource
+ * @param {Function} validateResource - Function to check resource health
+ * @return {Object} Pool with acquire() and release() methods
+ */
+function createAsyncResourcePool(poolSize, createResource, validateResource) {
+  // Your implementation here
+}
+```
+
+11. Promise Deadlock Detection
+
+```javascript
+/**
+ * Create a system to detect and resolve Promise deadlocks:
+ * - Track dependencies between promises
+ * - Detect circular dependencies that would cause deadlocks
+ * - Provide diagnostic information about the deadlock
+ * - Option to automatically break deadlocks
+ *
+ * @param {Function} promiseFn - Function that creates the promise
+ * @param {Object} options - Configuration options
+ * @return {Promise} - Promise with deadlock protection
+ */
+function deadlockSafePromise(promiseFn, options = {}) {
+  // Your implementation here
+}
+
+// Example deadlock scenario to detect:
+// A depends on B, B depends on C, C depends on A
+```
+
+12. DOM Builder Pattern Question
+
+```javascript
+// Implement ElementBuilder that allows:
+const div = new ElementBuilder('div')
+  .addClass('container')
+  .setAttribute('id', 'main')
+  .addChild('p', 'Hello World')
+  .style('color', 'blue')
+  .build();
+```
+
+13. Promise-like Implementation
+
+```javascript
+// Create a TaskRunner with chainable methods that mimic Promise behavior:
+TaskRunner(initialValue)
+  .then((val) => val * 2)
+  .catch((err) => console.error)
+  .delay(1000)
+  .then((val) => `Result: ${val}`)
+  .execute();
+```
+
+14. Immutable Data Structure
+
+```javascript
+// Implement an immutable object with method chaining:
+ImmutableList([1, 2, 3])
+  .push(4)
+  .map((x) => x * 2)
+  .filter((x) => x > 5)
+  .reduce((a, b) => a + b, 0)
+  .value(); // Returns a value without modifying original
+```
+
+15. Form Validator
+
+```javascript
+// Create a chainable form validation utility:
+Validator(formData)
+  .required('email', 'username', 'password')
+  .email('email')
+  .minLength('password', 8)
+  .match('confirmPassword', 'password')
+  .validate();
+```
